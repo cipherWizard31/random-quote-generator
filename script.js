@@ -1,7 +1,7 @@
 // initializing variables
-
 const quote = document.querySelector(".display-quote");
 const generateBtn = document.querySelector(".generate-button");
+const author = document.querySelector(".display-author");
 
 
 function generateRandomQuote() {
@@ -10,6 +10,8 @@ function generateRandomQuote() {
     fetch("http://api.quotable.io/random").then(response => response.json()).then(result => {
         quote.innerText =result.content;
         generateBtn.innerText = "New Quote";
+        author.innerText = `~ ${result.author}`;
+
     }
     )
 }
