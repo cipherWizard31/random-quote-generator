@@ -6,12 +6,13 @@ const copyBtn = document.querySelector(".copy-button");
 
 
 function generateRandomQuote() {
-    generateBtn.innerText = "Loading Quote...";
+    generateBtn.innerHTML = '<span class="material-symbols-outlined spin-icon">refresh</span>';
 
     fetch("http://api.quotable.io/random").then(response => response.json()).then(result => {
         quote.innerText =result.content;
-        generateBtn.innerText = "New Quote";
+        generateBtn.innerHTML = '<span class="material-symbols-outlined">add</span>';
         author.innerText = `~ ${result.author}`;
+        copyBtn.innerHTML= '<span class="material-symbols-outlined">content_copy</span>';
 
     }
     )
@@ -21,7 +22,7 @@ generateBtn.addEventListener("click", generateRandomQuote);
 
 copyBtn.addEventListener("click", () => {
     navigator.clipboard.writeText(quote.innerText + ' ' + author.innerText);
-    copyBtn.innerText = "Copied!";
+    copyBtn.innerHTML = '<span class="material-symbols-outlined">check_circle</span>';
 });
 
 

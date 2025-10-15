@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Example: set a height for the parent */
+}
+
+.inner-container {
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 20px; /* Add some spacing inside */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center; /* Center text inside */
+  max-width: 400px; /* Limit width */
+  width: 100%; /* Ensure responsiveness */
+  border: 2px solid navy; /* Add a navy blue border */
+  color: navy; /* Use navy blue for text */
+}
+
+button {
+  background-color: navy; /* Navy blue background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Increase font size */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.spin-icon {
+  animation: spin 2s linear infinite; /* 2 seconds, linear speed, continuous */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
